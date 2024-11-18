@@ -245,7 +245,7 @@ function print_arguments(args) {
     /*
     Frida's Interceptor has no information about the number of arguments, because there is no such 
     information available at the ABI level (and we don't rely on debug symbols).
-    
+
     I have implemented this function in order to try to determine how many arguments a method is using.
     It stops when:
         - The object is not nil
@@ -534,10 +534,4 @@ setImmediate(main)
 // 玄之又玄，众妙之门
 // Frida的崩溃有时候真的是玄学，大项目一崩溃根本不知道是哪里出的问题，这也是小而专的项目也有一丝机会的原因
 // Frida自身即会经常崩溃，建议多更换Frida(客/服要配套)版本/安卓版本，我自己常用的组合是两部手机，Frida12.8.0全家桶+安卓8.1.0，和Frida14.2.2全家桶+安卓10
-
-
-
-
-
-
 ```

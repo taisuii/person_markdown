@@ -107,6 +107,21 @@ function ILhook() {
 }
 ```
 
+值得注意的是如果上面的方法找不到的话，就直接搜索导出函数表
+
+```js
+var modules = Process.enumerateModules();
+modules.forEach(function (module) {
+    var exports = Module.enumerateExports(module.name);
+    exports.forEach(function (exp) {
+        if (exp.name.indexOf("getHNASignature") >= 0) {
+            console.log("Found in module: " + module.name);
+            console.log("Address: " + exp.address);
+        }
+    });
+});
+```
+
 打印调用栈，其实这个一行代码就可以搞定
 
 ```js
